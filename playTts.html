@@ -1,0 +1,24 @@
+﻿<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+function play() {
+	var item = document.getElementsByTagName('audio')[0];
+	var txt = document.getElementById("txt").value;
+	var spd = document.getElementById("spd").value;
+	item.setAttribute("src", "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd="+spd+"&text=" + encodeURIComponent(txt));
+	item.setAttribute("autoplay", "true");
+}
+</script>
+
+语速：<input type="number" id="spd" value="5" style="width: 35px;"><br/><br/>
+文字：<textarea id="txt" rows="6">请输入文字</textarea><br/><br/>
+
+<button onclick="play()">播放</button>
+
+<audio src="">
+Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
